@@ -1,3 +1,5 @@
+require 'organismo/element'
+
 module Organismo
   class ElementCollection
     attr_reader :source, :elements
@@ -11,7 +13,7 @@ module Organismo
 
     def elements_by_source
       source_items.map.with_index do |source_item, index|
-        Organismo::Element.create(source_item, index)
+        Organismo::Element.new(source_item, index).create
       end
     end
 

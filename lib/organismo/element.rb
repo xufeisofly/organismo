@@ -1,21 +1,27 @@
 module Organismo
   class Element
+    attr_reader :text, :location
+
     def initialize(source_item, location)
       @text = source_item
       @location = location
     end
 
-    def create(source_item, location)
-      if source_item.match(/\_QUOTE/)
-        Organismo::Element::Quote.new(source_item, location)
-      elsif source_item.match(/\_SRC/)
-        Organismo::Element::Code.new(source_item, location)
-      elsif source_item.match(/\_EXAMPLE/)
-        Organismo::Element::Example.new(source_item, location)
-      elsif source_item.match(/\*/)
-        Organismo::Element::Header.new(source_item, location)
+    def create
+      if text.match(/\_QUOTE/)
+        require 'organismo/element/quote'
+        Organismo::Element::Quote.new(text, location)
+      elsif text.match(/\_SRC/)
+        require 'organismo/element/code'
+        Organismo::Element::Code.new(text, location)
+      elsif text.match(/\_EXAMPLE/)
+        require 'organismo/element/example'
+        Organismo::Element::Example.new(text, location)
+      elsif text.match(/\*/)
+        require 'organismo/element/header'
+        Organismo::Element::Header.new(text, location)
       else
-        Organismo::Element::Text.new(source_item, location)
+        Organismo::Element::Text.new(text, location)
       end
     end
 

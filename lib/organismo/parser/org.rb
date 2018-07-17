@@ -1,3 +1,5 @@
+require 'organismo/element_collection'
+
 module Organismo
   module Parser
     class Org

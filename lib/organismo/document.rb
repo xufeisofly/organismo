@@ -1,3 +1,5 @@
+require 'organismo/parser/org'
+
 module Organismo
   class Document
     attr_reader :source, :tree
@@ -12,9 +14,8 @@ module Organismo
     end
 
     def to_html
-      require 'converter/html'
-      output = Organismo::Converter::Html.convert(tree)
-      output
+      require 'organismo/converter/html'
+      Organismo::Converter::Html.convert(tree)
     end
 
     private
