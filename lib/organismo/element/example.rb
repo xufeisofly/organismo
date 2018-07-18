@@ -1,13 +1,20 @@
 module Organismo
   class Element::Example < Element
+    attr_reader :content, :location
+
+    def initialize(text, location)
+      @content = text_without_wrapper(text)
+      @location = location
+    end
+
     def convert_to_html
-      if text.match /BEGIN_EXAMPLE/
-        '<pre>'
-      elsif text.match /END_EXAMPLE/
-        '</pre>'
-      else
-        text
-      end
+      "<pre>#{content}</pre>"
+    end
+
+    private
+
+    def text_without_wrapper(text)
+      text.split('\n')[1..-2].join('\n')
     end
   end
 end
