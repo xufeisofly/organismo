@@ -14,11 +14,11 @@ module Organismo
     private
 
     def text_without_wrapper(text)
-      text.split('\n')[1..-2].join('\n')
+      text.split("\n")[1..-2].join("\n")
     end
 
     def content_with_p_tag
-      content.split('\n').map { |c| "<p>#{c}</p>" }.join('<br \>')
+      content.split("\n").map { |c| "<p>#{c}</p>" }.join('<br \>')
     end
   end
 end
