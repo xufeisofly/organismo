@@ -1,10 +1,10 @@
 module Organismo
   class Element::Example < Element
     def convert_to_html
-      if text ~= 'BEGIN_EXAMPLE'
-        '<example>'
-      elsif text ~= 'END_EXAMPLE'
-        '</example>'
+      if text.match /BEGIN_EXAMPLE/
+        '<pre>'
+      elsif text.match /END_EXAMPLE/
+        '</pre>'
       else
         text
       end
