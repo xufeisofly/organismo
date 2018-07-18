@@ -19,7 +19,7 @@ module Organismo
     end
 
     def source_items
-      items = source.split('\n')
+      items = source.split("\n")
 
       result = []
       jump_to_index = -1
@@ -31,7 +31,7 @@ module Organismo
           end_tag_index = matched_end_tag_index_by_tag(items, index, tag_type(item))
           jump_to_index = end_tag_index
 
-          result << items[begin_tag_index..end_tag_index].join('\n')
+          result << items[begin_tag_index..end_tag_index].join("\n")
         else
           result << item
         end

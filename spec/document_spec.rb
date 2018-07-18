@@ -21,14 +21,14 @@ RSpec.describe Organismo::Document do
     end
 
     it 'complex convert' do
-      html = Organismo::Document.new('* h1 \n ** h2').to_html
+      html = Organismo::Document.new("* h1 \n ** h2").to_html
       expect(html).to eq '<h1>h1</h1><h2>h2</h2>'
     end
   end
 
   describe 'quote' do
     it '#+QUOTE to blockquote' do
-      org_text = '   #+BEGIN_QUOTE\n   分解条件表达式\n 是什么？\n  #+END_QUOTE\n'
+      org_text = "   #+BEGIN_QUOTE\n   分解条件表达式\n 是什么？\n  #+END_QUOTE\n"
       html = Organismo::Document.new(org_text).to_html
 
       expect(html).to eq '<blockquote><p>   分解条件表达式</p><br \><p> 是什么？</p></blockquote>'
@@ -37,10 +37,19 @@ RSpec.describe Organismo::Document do
 
   describe 'example' do
     it '#+EXAMPLE to pre' do
-      org_text = '   #+BEGIN_EXAMPLE\n   这么做有两个前提，\n   一个是有很多地方用到了对customer是否为空的判断，\n   另一个是null类型的customer和正常的customer大部分行为保持一致\n   #+END_EXAMPLE\n'
+      org_text = "   #+BEGIN_EXAMPLE\n   这么做有两个前提，\n   一个是有很多地方用到了对customer是否为空的判断，\n   另一个是null类型的customer和正常的customer大部分行为保持一致\n   #+END_EXAMPLE\n"
       html = Organismo::Document.new(org_text).to_html
 
-      expect(html).to eq '<pre>   这么做有两个前提，\n   一个是有很多地方用到了对customer是否为空的判断，\n   另一个是null类型的customer和正常的customer大部分行为保持一致</pre>'
+      expect(html).to eq "<pre>   这么做有两个前提，\n   一个是有很多地方用到了对customer是否为空的判断，\n   另一个是null类型的customer和正常的customer大部分行为保持一致</pre>"
+    end
+  end
+
+  describe 'code' do
+    it '#+SRC to pre' do
+      org_text = "   #+BEGIN_SRC ruby\n   class TextStatement\n     def value(name)\n       result = 'hi'\n       result += \"\#{name} \"\n     end\n   end\n\n   class HtmlStatement\n     def value(name)\n       result = '<p>hi</p>'\n       result += \"<h1>\#{name}</h1><br \\>\"\n     end\n   end\n   #+END_SRC\n"
+      html = Organismo::Document.new(org_text).to_html
+
+      expect(html).to eq "<pre>   class TextStatement\n     def value(name)\n       result = 'hi'\n       result += \"\#{name} \"\n     end\n   end\n\n   class HtmlStatement\n     def value(name)\n       result = '<p>hi</p>'\n       result += \"<h1>\#{name}</h1><br \\>\"\n     end\n   end</pre>"
     end
   end
 end
