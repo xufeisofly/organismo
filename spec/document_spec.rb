@@ -25,4 +25,13 @@ RSpec.describe Organismo::Document do
       expect(html).to eq '<h1>h1</h1><h2>h2</h2>'
     end
   end
+
+  describe 'quote' do
+    it '#+QUOTE to blockquote' do
+      org_text = '   #+BEGIN_QUOTE\n   分解条件表达式\n   #+END_QUOTE\n'
+      html = Organismo::Document.new(org_text).to_html
+
+      expect(html).to eq '<blockquote><p>   分解条件表达式</p></blockquote>'
+    end
+  end
 end

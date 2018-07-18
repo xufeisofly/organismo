@@ -21,6 +21,7 @@ module Organismo
         require 'organismo/element/header'
         Organismo::Element::Header.new(text, location)
       else
+        require 'organismo/element/text'
         Organismo::Element::Text.new(text, location)
       end
     end
