@@ -18,7 +18,7 @@ module Organismo
     end
 
     def content_with_p_tag
-      content.split("\n").map { |c| "<p>#{c}</p>" }.join('<br \>')
+      content.split("\n").map { |c| "<p>#{c}</p>" }.join('<br>')
     end
   end
 end

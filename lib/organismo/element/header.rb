@@ -15,15 +15,15 @@ module Organismo
     private
 
     def raw_text_without_tag(text)
-      split_text(text).last
+      split_text(text).last.lstrip.rstrip
     end
 
     def header_level(text)
-      split_text(text).first.size
+      split_text(text).first.lstrip.rstrip.size + 1
     end
 
     def split_text(text)
-      text.split(' ')
+      text.split(/\* /)
     end
   end
 end
