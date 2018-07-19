@@ -38,7 +38,7 @@ RSpec.describe Organismo::Document do
       org_text = "   #+BEGIN_QUOTE\n   分解条件表达式\n 是什么？\n  #+END_QUOTE\n  #+BEGIN_QUOTE\n   不知道\n  #+END_QUOTE\n"
       html = Organismo::Document.new(org_text).to_html
 
-      expect(html).to eq "<blockquote><p>   分解条件表达式</p><br><p> 是什么？</p></blockquote><blockquote><p>   不知道</p></blockquote>"
+      expect(html).to eq "<blockquote><p>   分解条件表达式</p><p> 是什么？</p></blockquote><blockquote><p>   不知道</p></blockquote>"
     end
   end
 
