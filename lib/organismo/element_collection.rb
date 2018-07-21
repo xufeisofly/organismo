@@ -46,7 +46,7 @@ module Organismo
 
     def matched_end_tag_index_by_tag(items, begin_index, tag_type)
       end_tags = items.select { |i| i[%r{END#{tag_type}}]}
-      end_tag_indexes = end_tags.map { |tag| items.each_index.select { |i| items[i] == tag } }.flatten.uniq
+      end_tag_indexes = end_tags.map { |tag| items.each_index.select { |i| items[i] == tag } }.flatten.uniq.sort
       end_tag_indexes.select { |i| i > begin_index }.first
     end
 
