@@ -10,7 +10,7 @@ module Organismo
     end
 
     def convert_to_html
-      "<pre>#{content}</pre>"
+      "<div class=\"code\"><pre>#{content}</pre></div>"
     end
 
     private
