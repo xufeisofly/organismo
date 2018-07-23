@@ -1,3 +1,5 @@
+require 'cgi'
+
 module Organismo
   class Element::Code < Element
     attr_reader :content, :location
@@ -14,7 +16,7 @@ module Organismo
     private
 
     def text_without_wrapper(text)
-      text.split("\n")[1..-2].join("\n")
+      CGI.escapeHTML(text.split("\n")[1..-2].join("\n"))
     end
   end
 end
