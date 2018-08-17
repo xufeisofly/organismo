@@ -14,7 +14,7 @@ module Organismo
     private
 
     def remove_tag(img_url)
-      img_url && img_url[2..-3]
+      img_url && img_url.strip.split(/\[\[|\]\]/).last
     end
   end
 end
