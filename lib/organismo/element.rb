@@ -20,12 +20,12 @@ module Organismo
       elsif text.match(/\*/)
         require 'organismo/element/header'
         Organismo::Element::Header.new(text, location)
-      elsif text.match(/\-/)
-        require 'organismo/element/plain_list'
-        Organismo::Element::PlainList.new(text, location)
       elsif text.match(/\[\[\S*\]\]/)
         require 'organismo/element/image'
         Organismo::Element::Image.new(text, location)
+      elsif text.match(/\-/)
+        require 'organismo/element/plain_list'
+        Organismo::Element::PlainList.new(text, location)
       else
         require 'organismo/element/text'
         Organismo::Element::Text.new(text, location)
