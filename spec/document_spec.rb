@@ -1,4 +1,3 @@
-require 'pry'
 RSpec.describe Organismo::Document do
   before do
     @yaml_hash = YAML.load_file('spec/fixtures/data.yml')
