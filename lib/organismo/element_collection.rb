@@ -12,6 +12,7 @@ module Organismo
 
     private
 
+    # initialize elements items
     def elements_by_source
       source_items.map.with_index do |source_item, index|
         Organismo::Element.new(source_item, index).create
@@ -26,6 +27,8 @@ module Organismo
       items.each_with_index do |item, index|
         next if index <= jump_to_index
 
+        # if item is begin/end wrapper
+        # combine its contents to be one array item
         if is_begin_tag?(item)
           begin_tag_index = index
           end_tag_index = matched_end_tag_index_by_tag(items, index, tag_type(item))

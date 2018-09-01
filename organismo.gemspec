@@ -1,4 +1,3 @@
-
 lib = File.expand_path("../lib", __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require "organismo/version"
@@ -6,11 +5,11 @@ require "organismo/version"
 Gem::Specification.new do |spec|
   spec.name          = "organismo"
   spec.version       = Organismo::VERSION
-  spec.authors       = ["许飞"]
-  spec.email         = ["feixu@tju.edu.cn"]
+  spec.authors       = ["Nor"]
+  spec.email         = ["xufei1990@gmail.com"]
 
-  spec.summary       = %q{Convert Org mode text to HTML}
-  spec.description   = %q{Convert Org mode text to HTML, including headers, code blocks etc.}
+  spec.summary       = %q{Convert Org text to HTML}
+  spec.description   = %q{Convert Org text to HTML, including headers, code blocks etc.}
   spec.homepage      = "https://github.com/xufeisofly/organismo"
   spec.license       = "MIT"
 
@@ -35,6 +34,4 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "bundler", "~> 1.16"
   spec.add_development_dependency "rake", "~> 10.0"
   spec.add_development_dependency "rspec", "~> 3.0"
-  spec.add_development_dependency "byebug"
-  spec.add_development_dependency "pry-byebug"
 end

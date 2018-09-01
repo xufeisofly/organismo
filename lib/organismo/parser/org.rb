@@ -7,6 +7,7 @@ module Organismo
         @options = {}
       end
 
+      # parse and return an element collection item
       def parse(source)
         config_parser
 

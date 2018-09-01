@@ -1,5 +1,3 @@
-require 'cgi'
-
 module Organismo
   class Element::Code < Element
     attr_reader :content, :location

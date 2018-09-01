@@ -1,5 +1,4 @@
-require 'cgi'
-
+# without ol or ul, under development
 module Organismo
   class Element::PlainList < Element
     attr_reader :content, :location
