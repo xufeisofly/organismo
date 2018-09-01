@@ -97,12 +97,30 @@ RSpec.describe Organismo::Document do
   end
 
   describe 'images' do
-    it '[[]] to <img>' do
+    it '[[.jpg|.png|.jpeg]] to <img>' do
       org_text = @yaml_hash.dig('images1', 'input')
 
       html = Organismo::Document.new(org_text).to_html
 
       expect(html).to eq @yaml_hash.dig('images1', 'output')
+    end
+  end
+
+  describe 'links' do
+    it '[[url][text]] to <a>' do
+      org_text = @yaml_hash.dig('link1', 'input')
+
+      html = Organismo::Document.new(org_text).to_html
+
+      expect(html).to eq @yaml_hash.dig('link1', 'output')
+    end
+
+    it '[[url]] to <a>' do
+      org_text = @yaml_hash.dig('link2', 'input')
+
+      html = Organismo::Document.new(org_text).to_html
+
+      expect(html).to eq @yaml_hash.dig('link2', 'output')
     end
   end
 

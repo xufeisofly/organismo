@@ -1,3 +1,5 @@
+require 'cgi'
+
 module Organismo
   class Element::Image < Element
     attr_reader :content, :location
@@ -14,7 +16,8 @@ module Organismo
     private
 
     def remove_tag(img_url)
-      img_url && img_url.strip.split(/\[\[|\]\]/).last
+      result = img_url && img_url.strip.split(/\[\[|\]\]/).last
+      CGI.escapeHTML(result)
     end
   end
 end
