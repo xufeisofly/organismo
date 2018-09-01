@@ -1,7 +1,6 @@
 # Organismo
 
 Organismo is a useful tool for converting org-mode text(in .org file) to html structure.
-
 Currently Organismo support common org item convertions as following:
 
 1. org headers
@@ -28,7 +27,7 @@ END_SRC
 
 > [[https://www.niltouch.cn][Norris' blog]]
 
-6. org plain lists
+6. org unordered lists
 
 > \- item1
 > \- item2
@@ -57,7 +56,16 @@ Or install it yourself as:
 
 ## Usage
 
+The way to use organismo is quite simple as there is only one API.
 
+``` ruby
+html_text = Organismo::Document.new(org_text).to_html
+```
+
+Then you can just render html_text to your .html file. 
+However, Organismo will not generate CSS code which you need to write on your own to give it a better looking.
+
+Considering XSS, the html that already in your org_text before will be escaped after convertions.
 
 ## Development
 
