@@ -1,5 +1,3 @@
-require 'cgi'
-
 module Organismo
   class Element::Text < Element
     attr_reader :raw_text, :location

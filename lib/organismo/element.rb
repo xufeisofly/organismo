@@ -7,6 +7,8 @@ module Organismo
       @location = location
     end
 
+    # require and initialize different instance
+    # depending on string regex
     def create
       if text.match(/\_QUOTE/)
         require 'organismo/element/quote'

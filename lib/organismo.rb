@@ -1,6 +1,4 @@
-require 'organismo/version'
-require 'organismo/document'
+require 'cgi'
 
-module Organismo
-  # Your code goes here...
-end
+require_relative 'organismo/version'
+require_relative 'organismo/document'

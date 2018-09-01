@@ -1,5 +1,3 @@
-require 'cgi'
-
 module Organismo
   class Element::Link < Element
     attr_reader :link_url, :link_text, :location
@@ -15,9 +13,9 @@ module Organismo
 
     private
 
+    # return link_url and link_text
     def split_link_from(content)
-      content_without_wrapper = content && content.strip.split(/\[\[|\]\]/).last
-      content_without_wrapper.split(/\]\[/)
+      content && content.strip.split(/\[\[|\]\]/).last.split(/\]\[/)
     end
   end
 end
