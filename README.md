@@ -1,8 +1,43 @@
 # Organismo
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/organismo`. To experiment with that code, run `bin/console` for an interactive prompt.
+Organismo is a useful tool for converting org-mode text(in .org file) to html structure.
 
-TODO: Delete this and the text above, and describe your gem
+Currently Organismo support common org item convertions as following:
+
+1. org headers
+
+> ** header 2
+
+2. org examples
+
+> BEGIN_EXAMPLE
+...
+END_EXAMPLE
+
+3. org code blocks
+
+> BEGIN_SRC ruby
+...
+END_SRC
+
+4. org images links
+
+> [[https:://image_url.jpg]]
+
+5. org outer links
+
+> [[https://www.niltouch.cn][Norris' blog]]
+
+6. org plain lists
+
+> - item1
+- item2
+
+7. org quotes
+
+> BEGIN_QUOTE
+...
+END_QUOTE
 
 ## Installation
 
@@ -22,7 +57,7 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+
 
 ## Development
 
