@@ -1,42 +1,36 @@
 # Organismo
 
 Organismo is a useful tool for converting org-mode text(in .org file) to html structure.
-Currently Organismo support common org item convertions as following:
+Currently Organismo supports some very common org convertions:
 
 1. org headers
 
-> ** header 2
+···** header 2
 
 2. org examples
 
-> BEGIN_EXAMPLE
-...
-END_EXAMPLE
+···BEGIN_EXAMPLE ... END_EXAMPLE
 
 3. org code blocks
 
-> BEGIN_SRC ruby
-...
-END_SRC
+···BEGIN_SRC ruby ... END_SRC
 
 4. org images links
 
-> [[https:://image_url.jpg]]
+···[[https:://image_url.jpg]]
 
 5. org outer links
 
-> [[https://www.niltouch.cn][Norris' blog]]
+···[[https://www.niltouch.cn][Norris' blog]]
 
 6. org unordered lists
 
-> \- item1
-> \- item2
+···\- item1
+···\- item2
 
 7. org quotes
 
-> BEGIN_QUOTE
-...
-END_QUOTE
+···BEGIN_QUOTE ... END_QUOTE
 
 ## Installation
 
