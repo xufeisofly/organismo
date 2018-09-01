@@ -30,8 +30,8 @@ END_SRC
 
 6. org plain lists
 
-> - item1
-> - item2
+> \- item1
+> \- item2
 
 7. org quotes
 
