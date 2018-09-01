@@ -3,6 +3,8 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require "organismo/version"
 
 Gem::Specification.new do |spec|
+  spec.files = `git ls-files`.split($/).reject { |fn| fn.start_with? "spec" }
+  
   spec.name          = "organismo"
   spec.version       = Organismo::VERSION
   spec.authors       = ["Nor"]
