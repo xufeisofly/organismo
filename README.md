@@ -1,7 +1,8 @@
 # Organismo
 
-Organismo is a useful tool for converting org-mode text(in .org file) to html structure.
-Currently Organismo supports some very common org convertions:
+Under Development! Organismo is a useful tool for converting org-mode text(in .org file) to html structure.
+
+Currently Organismo only supports some very common org convertions:
 
 1. org headers
 
